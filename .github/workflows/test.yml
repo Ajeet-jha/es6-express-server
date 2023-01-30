@@ -16,5 +16,4 @@ jobs:
         with:
           node-version: "18.x"
       - run: npm ci
-      - name: Run Build
       - run: npm run build
