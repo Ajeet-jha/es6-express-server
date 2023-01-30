@@ -7,7 +7,8 @@ on:
     branches:
       - main
 jobs:
-  build:
+  deploy:
+    name: Wait for Deploy
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
@@ -17,19 +18,8 @@ jobs:
           node-version: "18.x"
       - run: npm ci
       - run: npm i && npm run build
-  deploy:
-    name: Wait for Deploy
-    runs-on: ubuntu-latest
-   steps:
-      - uses: actions/checkout@v3
-      - name: Use Node.js
-        uses: actions/setup-node@v3
-        with:
-          node-version: "18.x"
-      - run: npm ci
-      - run: npm i && npm run build
+      - uses: bounceapp/render-action@0.6.0
       - name: Wait for Render Deployment
-        uses: bounceapp/render-action@0.6.0
         with:
           service-id: rnd_FaYZ8iWWYbkEZnFUo7S8Wwe0lAVG
           retries: 20
