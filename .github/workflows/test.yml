@@ -8,15 +8,17 @@ on:
       - main
 jobs:
   build:
-    runs-on: ubuntu-latest  
+    runs-on: ubuntu-latest
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v2
-    - name: Use Node.js
-      uses: actions/setup-node@v1
-      with:
-        node-version: '18.x'
-    - name: Run Build 
-      run: npm run build
-    - name: Run dev
-      run: npm run start
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: "18.x"
+      - name: Install Dependencies
+        run: npm install
+      - name: Run Build
+        run: npm run build
+      - name: Run dev
+        run: npm run start
