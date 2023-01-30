@@ -19,7 +19,6 @@ jobs:
       - run: npm ci
       - run: npm i && npm run build
       - uses: bounceapp/render-action@0.6.0
-      - name: Wait for Render Deployment
         with:
           service-id: rnd_FaYZ8iWWYbkEZnFUo7S8Wwe0lAVG
           retries: 20
