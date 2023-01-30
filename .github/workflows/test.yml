@@ -1,4 +1,3 @@
-yaml
 name: Baisc ES6 express server
 on:
   push:
