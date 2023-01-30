@@ -20,5 +20,3 @@ jobs:
         run: npm install
       - name: Run Build
         run: npm run build
-      - name: Run dev
-        run: npm run start
